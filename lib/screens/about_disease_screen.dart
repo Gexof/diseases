@@ -1,14 +1,9 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:medicare_health_app/constants/colors.dart';
+
 import 'package:medicare_health_app/widgets/mainheading.dart';
 
-import '../constants/sizes.dart';
 import '../widgets/custom_carousel_slider.dart';
 import '../widgets/diseases_articale.dart';
-import '../widgets/diseases_name_heading.dart';
 
 class AboutDiseaseScreen extends StatefulWidget {
   AboutDiseaseScreen({super.key});
@@ -21,6 +16,19 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        elevation: 0,
+      ),
       body: ListView(
         children: [
           Column(
@@ -31,7 +39,7 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
                 child: Mainheading(headingName: 'About Disease'),
               ),
               CustomCarouselSlider(),
-              DiseasesArticale()
+              const DiseasesArticale(),
             ],
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicare_health_app/screens/about_disease_screen.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
 
 import '../widgets/custom_search_bar.dart';
@@ -79,11 +80,19 @@ class SearchScreen extends StatelessWidget {
                   ),
                   itemCount: gridMap.length,
                   itemBuilder: (context, index) {
-                    return DiseasesCard(
-                      alphabet: "${gridMap[index]['alphabet']}",
-                      title: "${gridMap[index]['title']}",
-                      height: 124,
-                      width: 167,
+                    return GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return AboutDiseaseScreen();
+                        }));
+                      },
+                      child: DiseasesCard(
+                        alphabet: "${gridMap[index]['alphabet']}",
+                        title: "${gridMap[index]['title']}",
+                        height: 124,
+                        width: 167,
+                      ),
                     );
                   },
                 ),
