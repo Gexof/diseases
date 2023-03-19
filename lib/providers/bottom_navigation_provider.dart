@@ -6,6 +6,7 @@ import 'package:medicare_health_app/screens/search_screen.dart';
 class BottomNavigationProvider extends ChangeNotifier {
   int _selectedIndex = 0;
   List<Widget> _screens = [
+    HomeScreen(),
     SearchScreen(),
     CategoryScreen(),
   ];
@@ -19,7 +20,7 @@ class BottomNavigationProvider extends ChangeNotifier {
     return _selectedIndex;
   }
 
-  get cureentScreen {
+  List<Widget> get cureentScreen {
     return _screens;
   }
 }

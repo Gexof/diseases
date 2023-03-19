@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:medicare_health_app/providers/bottom_navigation_provider.dart';
 import 'package:medicare_health_app/screens/home_screen.dart';
 import 'package:medicare_health_app/screens/search_screen.dart';
+import 'package:medicare_health_app/widgets/bottom_nav_bar.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/about_disease_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
           Theme.of(context).textTheme,
         ),
       ),
-      home: SearchScreen(),
+      home: BottomNavBar(),
     );
   }
 }
