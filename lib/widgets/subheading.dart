@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import '../constants/sizes.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class Subheading extends StatelessWidget {
   Subheading({

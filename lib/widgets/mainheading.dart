@@ -13,12 +13,18 @@ class Mainheading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      headingName,
-      style: TextStyle(
-        color: primaryColor,
-        fontWeight: FontWeight.w700,
-        fontSize: mainHeadings,
+    return Container(
+      margin: EdgeInsets.only(
+        left: 20,
+        top: 50,
+      ),
+      child: Text(
+        headingName,
+        style: const TextStyle(
+          color: primaryColor,
+          fontWeight: FontWeight.w700,
+          fontSize: mainHeadings,
+        ),
       ),
     );
   }

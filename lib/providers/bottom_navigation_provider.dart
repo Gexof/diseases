@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_health_app/screens/category_screen.dart';
 import 'package:medicare_health_app/screens/home_screen.dart';
 import 'package:medicare_health_app/screens/search_screen.dart';
 
+import '../screens/seasons_screen.dart';
+
 class BottomNavigationProvider extends ChangeNotifier {
   int _selectedIndex = 0;
-  List<Widget> _screens = [
+  final List<Widget> _screens = [
     HomeScreen(),
     SearchScreen(),
-    CategoryScreen(),
+    SeasonsScreen(),
   ];
 
   set selectedIndex(int value) {

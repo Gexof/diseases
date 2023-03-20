@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:medicare_health_app/constants/colors.dart';
 import 'package:medicare_health_app/providers/bottom_navigation_provider.dart';
-import 'package:medicare_health_app/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
-import '../screens/category_screen.dart';
-import '../screens/search_screen.dart';
-
 class BottomNavBar extends StatelessWidget {
-  BottomNavBar({
+  const BottomNavBar({
     super.key,
   });
 
@@ -24,7 +21,8 @@ class BottomNavBar extends StatelessWidget {
       extendBody: true,
       body: navigationProvider.cureentScreen[navigationProvider.selectedIndex],
       bottomNavigationBar: Container(
-        margin: EdgeInsets.only(bottom: 23, left: 20, right: 20),
+        // height: 80,
+        margin: const EdgeInsets.only(bottom: 23, left: 20, right: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
           boxShadow: const [
@@ -43,10 +41,25 @@ class BottomNavBar extends StatelessWidget {
             onTap: (value) {
               navigationProvider.selectedIndex = value;
             },
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.category), label: ''),
+            unselectedItemColor: primaryColor,
+            selectedItemColor: Colors.white,
+            items: [
+              BottomNavigationBarItem(
+                icon: Container(
+                  width: 42,
+                  height: 42,
+                  decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  child: const Icon(Icons.home),
+                ),
+                label: '',
+              ),
+              const BottomNavigationBarItem(
+                  icon: Icon(Icons.search), label: ''),
+              const BottomNavigationBarItem(
+                  icon: Icon(Icons.category), label: ''),
             ],
           ),
         ),

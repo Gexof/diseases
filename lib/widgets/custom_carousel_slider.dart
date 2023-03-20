@@ -64,7 +64,8 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
                 margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 3),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: cureent == index ? primaryColor : Color(0xffE0e0e0),
+                  color:
+                      cureent == index ? primaryColor : const Color(0xffE0e0e0),
                 ),
               );
             },

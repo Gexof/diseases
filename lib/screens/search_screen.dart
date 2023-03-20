@@ -43,12 +43,8 @@ class SearchScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // mainheading
-              const Padding(
-                padding: EdgeInsets.only(left: 20.0, top: 50),
-                child: Mainheading(
-                  headingName: 'Search',
-                ),
+              const Mainheading(
+                headingName: 'Search',
               ),
 
               // Search Bar
@@ -84,7 +80,7 @@ class SearchScreen extends StatelessWidget {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return AboutDiseaseScreen();
+                          return const AboutDiseaseScreen();
                         }));
                       },
                       child: DiseasesCard(

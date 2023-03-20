@@ -6,7 +6,7 @@ import '../widgets/custom_carousel_slider.dart';
 import '../widgets/diseases_articale.dart';
 
 class AboutDiseaseScreen extends StatefulWidget {
-  AboutDiseaseScreen({super.key});
+  const AboutDiseaseScreen({super.key});
 
   @override
   State<AboutDiseaseScreen> createState() => _AboutDiseaseScreenState();
