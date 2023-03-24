@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medicare_health_app/constants/colors.dart';
 import 'package:medicare_health_app/providers/bottom_navigation_provider.dart';
 import 'package:provider/provider.dart';
@@ -7,12 +8,6 @@ class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
     super.key,
   });
-
-  // List<Widget> screens = [
-  //   HomeScreen(),
-  //   SearchScreen(),
-  //   CategoryScreen(),
-  // ];
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +32,7 @@ class BottomNavBar extends StatelessWidget {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(85),
           child: BottomNavigationBar(
+            selectedFontSize: 0,
             currentIndex: navigationProvider.selectedIndex,
             onTap: (value) {
               navigationProvider.selectedIndex = value;
@@ -44,24 +40,32 @@ class BottomNavBar extends StatelessWidget {
             unselectedItemColor: primaryColor,
             selectedItemColor: Colors.white,
             items: [
-              BottomNavigationBarItem(
-                icon: Container(
-                  width: 42,
-                  height: 42,
-                  decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: const Icon(Icons.home),
-                ),
-                label: '',
-              ),
-              const BottomNavigationBarItem(
-                  icon: Icon(Icons.search), label: ''),
-              const BottomNavigationBarItem(
-                  icon: Icon(Icons.category), label: ''),
+              navBarItem('assets/icons/home.svg'),
+              navBarItem('assets/icons/search.svg'),
+              navBarItem('assets/icons/category.svg'),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  BottomNavigationBarItem navBarItem(String svgPath) {
+    return BottomNavigationBarItem(
+      icon: SvgPicture.asset(
+        svgPath,
+        colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
+      ),
+      label: '',
+      activeIcon: Container(
+        height: 42,
+        width: 42,
+        decoration:
+            const BoxDecoration(color: primaryColor, shape: BoxShape.circle),
+        child: SvgPicture.asset(
+          svgPath,
+          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          fit: BoxFit.scaleDown,
         ),
       ),
     );

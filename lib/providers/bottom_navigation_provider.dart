@@ -9,7 +9,7 @@ class BottomNavigationProvider extends ChangeNotifier {
   final List<Widget> _screens = [
     HomeScreen(),
     SearchScreen(),
-    SeasonsScreen(),
+    const SeasonsScreen(),
   ];
 
   set selectedIndex(int value) {

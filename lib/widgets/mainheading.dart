@@ -14,7 +14,7 @@ class Mainheading extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         left: 20,
         top: 50,
       ),
