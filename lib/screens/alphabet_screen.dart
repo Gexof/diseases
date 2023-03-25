@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:medicare_health_app/widgets/custom_app_bar.dart';
 import 'package:medicare_health_app/widgets/mainheading.dart';
 
 import '../widgets/diseases_card.dart';
@@ -122,11 +123,12 @@ class AlphabetScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(title: 'Alphabet'),
       body: SingleChildScrollView(
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Mainheading(headingName: 'Alphabet'),
+          // Mainheading(headingName: 'Alphabet'),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: GridView.builder(

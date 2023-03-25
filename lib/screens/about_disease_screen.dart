@@ -5,6 +5,7 @@ import 'package:medicare_health_app/constants/colors.dart';
 import 'package:medicare_health_app/widgets/mainheading.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
 
+import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_carousel_slider.dart';
 import '../widgets/diseases_articale.dart';
 
@@ -19,27 +20,7 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'About Disease',
-          style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.w400,
-            color: Colors.black,
-          ),
-        ),
-        backgroundColor: Colors.transparent,
-        leading: IconButton(
-          icon: SvgPicture.asset(
-            'assets/icons/arrow.svg',
-            colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
-          ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        elevation: 0,
-      ),
+      appBar: CustomAppBar(title: 'About Disease'),
       body: ListView(
         children: [
           Column(
