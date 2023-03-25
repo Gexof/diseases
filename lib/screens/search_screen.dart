@@ -47,15 +47,7 @@ class SearchScreen extends StatelessWidget {
                 headingName: 'Search',
               ),
 
-              // Search Bar
-              const Padding(
-                padding: EdgeInsets.only(
-                  left: 17,
-                  right: 23,
-                  top: 32,
-                ),
-                child: CustomSearchBar(),
-              ),
+              const CustomSearchBar(),
 
               //subheading
               Padding(

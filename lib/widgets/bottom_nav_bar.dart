@@ -54,17 +54,25 @@ class BottomNavBar extends StatelessWidget {
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(
         svgPath,
-        colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
+        colorFilter: const ColorFilter.mode(
+          primaryColor,
+          BlendMode.srcIn,
+        ),
       ),
       label: '',
       activeIcon: Container(
         height: 42,
         width: 42,
-        decoration:
-            const BoxDecoration(color: primaryColor, shape: BoxShape.circle),
+        decoration: const BoxDecoration(
+          color: primaryColor,
+          shape: BoxShape.circle,
+        ),
         child: SvgPicture.asset(
           svgPath,
-          colorFilter: const ColorFilter.mode(Colors.white, BlendMode.srcIn),
+          colorFilter: const ColorFilter.mode(
+            Colors.white,
+            BlendMode.srcIn,
+          ),
           fit: BoxFit.scaleDown,
         ),
       ),

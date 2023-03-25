@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:medicare_health_app/constants/colors.dart';
 
 import 'package:medicare_health_app/widgets/mainheading.dart';
+import 'package:medicare_health_app/widgets/subheading.dart';
 
 import '../widgets/custom_carousel_slider.dart';
 import '../widgets/diseases_articale.dart';
@@ -17,11 +20,19 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          'About Disease',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w400,
+            color: Colors.black,
+          ),
+        ),
         backgroundColor: Colors.transparent,
         leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
+          icon: SvgPicture.asset(
+            'assets/icons/arrow.svg',
+            colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
           ),
           onPressed: () {
             Navigator.pop(context);
@@ -34,10 +45,7 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(
-                padding: EdgeInsets.only(left: 20, top: 50, bottom: 20),
-                child: Mainheading(headingName: 'About Disease'),
-              ),
+              const SizedBox(height: 30),
               CustomCarouselSlider(),
               const DiseasesArticale(),
             ],

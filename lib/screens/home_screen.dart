@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/constants/colors.dart';
 import 'package:medicare_health_app/constants/sizes.dart';
+import 'package:medicare_health_app/screens/alphabet_screen.dart';
 import 'package:medicare_health_app/widgets/diseases_card.dart';
 
 import '../widgets/subheading.dart';
@@ -83,9 +84,13 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 45, left: 20, right: 20),
-              child: Subheading(title: 'Alphabetically', isSeaAll: true),
+            Subheading(
+              title: 'Alphabetically',
+              isSeaAll: true,
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => AlphabetScreen()));
+              },
             ),
 
             Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicare_health_app/screens/season_screen.dart';
 
 import 'package:medicare_health_app/widgets/mainheading.dart';
 
@@ -19,7 +20,13 @@ class SeasonsScreen extends StatelessWidget {
             shrinkWrap: true,
             itemCount: 4,
             itemBuilder: (context, index) {
-              return const CustomCard();
+              return GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SeasonScreen()));
+                },
+                child: const CustomCard(),
+              );
             },
           ),
         ],
