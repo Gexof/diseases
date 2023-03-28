@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets/long_card.dart';
+import '../../../widgets/rectangular_card.dart';
 import '../../season_screen.dart';
 
 class SasonsScreenList extends StatelessWidget {
@@ -20,7 +20,7 @@ class SasonsScreenList extends StatelessWidget {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => SeasonScreen()));
           },
-          child: const LongCard(),
+          child: const RectangularCard(),
         );
       },
     );
