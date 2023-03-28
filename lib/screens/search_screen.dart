@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/screens/about_disease_screen.dart';
+import 'package:medicare_health_app/widgets/custom_gird_builder.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
 
 import '../widgets/custom_search_bar.dart';
@@ -43,48 +44,29 @@ class SearchScreen extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Mainheading(
-                headingName: 'Search',
-              ),
-
+              const Mainheading(headingName: 'Search'),
               const CustomSearchBar(),
-
-              //subheading
-              Padding(
-                padding: const EdgeInsets.only(left: 24, top: 32),
-                child: Subheading(title: 'Common Searches'),
-              ),
-
-              // Grid View
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 20.0,
-                    mainAxisSpacing: 16,
-                  ),
-                  itemCount: gridMap.length,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return const AboutDiseaseScreen();
-                        }));
-                      },
-                      child: DiseasesCard(
-                        alphabet: "${gridMap[index]['alphabet']}",
-                        title: "${gridMap[index]['title']}",
-                        height: 124,
-                        width: 167,
-                      ),
-                    );
-                  },
-                ),
-              ),
+              Subheading(title: 'Common Searches'),
+              CustomGridBuilder(
+                gridMap: gridMap,
+                itemCount: gridMap.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const AboutDiseaseScreen();
+                      }));
+                    },
+                    child: DiseasesCard(
+                      alphabet: "${gridMap[index]['alphabet']}",
+                      title: "${gridMap[index]['title']}",
+                      height: 124,
+                      width: 167,
+                    ),
+                  );
+                },
+              )
             ],
           ),
         ],

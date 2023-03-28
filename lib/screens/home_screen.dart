@@ -4,6 +4,7 @@ import 'package:medicare_health_app/constants/sizes.dart';
 import 'package:medicare_health_app/screens/alphabet_screen.dart';
 import 'package:medicare_health_app/widgets/diseases_card.dart';
 
+import '../widgets/custom_gird_builder.dart';
 import '../widgets/subheading.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -93,35 +94,23 @@ class HomeScreen extends StatelessWidget {
               },
             ),
 
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 16,
-                ),
-                itemCount: gridMap.length,
-                itemBuilder: (context, index) {
-                  return DiseasesCard(
-                    alphabet: "${gridMap[index]['alphabet']}",
-                    title: "${gridMap[index]['title']}",
-                    height: 124,
-                    width: 167,
-                  );
-                },
-              ),
+            CustomGridBuilder(
+              gridMap: gridMap,
+              itemCount: gridMap.length,
+              itemBuilder: (context, index) {
+                return DiseasesCard(
+                  alphabet: "${gridMap[index]['alphabet']}",
+                  title: "${gridMap[index]['title']}",
+                  height: 124,
+                  width: 167,
+                );
+              },
             ),
 
-            Padding(
-              padding: const EdgeInsets.only(top: 21, left: 20),
-              child: Subheading(title: 'Recommended'),
-            ),
+            Subheading(title: 'Recommended'),
 
             SizedBox(
-              height: 210,
+              height: MediaQuery.of(context).size.height / 2.5,
               child: ListView.separated(
                 padding: const EdgeInsets.only(left: 20, right: 20),
                 separatorBuilder: (context, index) {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/widgets/custom_app_bar.dart';
+import 'package:medicare_health_app/widgets/custom_gird_builder.dart';
 
 import 'package:medicare_health_app/widgets/custom_search_bar.dart';
 import 'package:medicare_health_app/widgets/mainheading.dart';
@@ -46,29 +47,18 @@ class SeasonScreen extends StatelessWidget {
             const Mainheading(headingName: 'Summer'),
             const CustomSearchBar(),
             Subheading(title: 'Summer Searches'),
-            Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 20,
-              ),
-              child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 16,
-                ),
-                itemCount: gridMap.length,
-                itemBuilder: (context, index) {
-                  return DiseasesCard(
-                    alphabet: "${gridMap[index]['alphabet']}",
-                    title: "${gridMap[index]['title']}",
-                    height: 124,
-                    width: 167,
-                  );
-                },
-              ),
-            ),
+            CustomGridBuilder(
+              gridMap: gridMap,
+              itemCount: gridMap.length,
+              itemBuilder: (context, index) {
+                return DiseasesCard(
+                  alphabet: "${gridMap[index]['alphabet']}",
+                  title: "${gridMap[index]['title']}",
+                  height: 124,
+                  width: 167,
+                );
+              },
+            )
           ],
         ),
       ),
