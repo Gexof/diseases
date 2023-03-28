@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/screens/about_disease_screen.dart';
-import 'package:medicare_health_app/widgets/custom_gird_builder.dart';
+import 'package:medicare_health_app/widgets/grid_builder.dart';
+import 'package:medicare_health_app/widgets/square_card.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
 
 import '../widgets/custom_search_bar.dart';
-import '../widgets/diseases_card.dart';
+
 import '../widgets/mainheading.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -47,7 +48,7 @@ class SearchScreen extends StatelessWidget {
               const Mainheading(headingName: 'Search'),
               const CustomSearchBar(),
               Subheading(title: 'Common Searches'),
-              CustomGridBuilder(
+              GridBuilder(
                 gridMap: gridMap,
                 itemCount: gridMap.length,
                 itemBuilder: (context, index) {
@@ -58,7 +59,7 @@ class SearchScreen extends StatelessWidget {
                         return const AboutDiseaseScreen();
                       }));
                     },
-                    child: DiseasesCard(
+                    child: SquareCard(
                       alphabet: "${gridMap[index]['alphabet']}",
                       title: "${gridMap[index]['title']}",
                       height: 124,

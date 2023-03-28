@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 import '../constants/sizes.dart';
 
-class CustomCard extends StatelessWidget {
-  const CustomCard({
+class LongCard extends StatelessWidget {
+  const LongCard({
     super.key,
   });
 

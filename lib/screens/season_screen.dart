@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/widgets/custom_app_bar.dart';
-import 'package:medicare_health_app/widgets/custom_gird_builder.dart';
 
 import 'package:medicare_health_app/widgets/custom_search_bar.dart';
 import 'package:medicare_health_app/widgets/mainheading.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
 
-import '../widgets/diseases_card.dart';
+import '../widgets/grid_builder.dart';
+import '../widgets/square_card.dart';
 
 class SeasonScreen extends StatelessWidget {
   SeasonScreen({super.key});
@@ -47,11 +47,11 @@ class SeasonScreen extends StatelessWidget {
             const Mainheading(headingName: 'Summer'),
             const CustomSearchBar(),
             Subheading(title: 'Summer Searches'),
-            CustomGridBuilder(
+            GridBuilder(
               gridMap: gridMap,
               itemCount: gridMap.length,
               itemBuilder: (context, index) {
-                return DiseasesCard(
+                return SquareCard(
                   alphabet: "${gridMap[index]['alphabet']}",
                   title: "${gridMap[index]['title']}",
                   height: 124,

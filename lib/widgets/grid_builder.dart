@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomGridBuilder extends StatelessWidget {
-  const CustomGridBuilder({
+class GridBuilder extends StatelessWidget {
+  const GridBuilder({
     super.key,
     required this.gridMap,
     required this.itemCount,

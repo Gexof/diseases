@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DiseasesCard extends StatelessWidget {
+class SquareCard extends StatelessWidget {
   final String alphabet;
   final String title;
   double height;
   double width;
 
-  DiseasesCard({
+  SquareCard({
     super.key,
     required this.alphabet,
     required this.title,

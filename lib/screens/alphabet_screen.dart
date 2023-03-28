@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:medicare_health_app/widgets/custom_app_bar.dart';
 import 'package:medicare_health_app/widgets/mainheading.dart';
 
-import '../widgets/diseases_card.dart';
+import '../widgets/square_card.dart';
 
 class AlphabetScreen extends StatelessWidget {
   AlphabetScreen({super.key});
@@ -141,7 +141,7 @@ class AlphabetScreen extends StatelessWidget {
               ),
               itemCount: gridMap.length,
               itemBuilder: (context, index) {
-                return DiseasesCard(
+                return SquareCard(
                   alphabet: "${gridMap[index]['alphabet']}",
                   title: "${gridMap[index]['title']}",
                   height: 124,

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:medicare_health_app/constants/colors.dart';
 import 'package:medicare_health_app/constants/sizes.dart';
 import 'package:medicare_health_app/screens/alphabet_screen.dart';
-import 'package:medicare_health_app/widgets/diseases_card.dart';
+import 'package:medicare_health_app/widgets/square_card.dart';
 
-import '../widgets/custom_gird_builder.dart';
+import '../widgets/grid_builder.dart';
 import '../widgets/subheading.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -94,11 +94,11 @@ class HomeScreen extends StatelessWidget {
               },
             ),
 
-            CustomGridBuilder(
+            GridBuilder(
               gridMap: gridMap,
               itemCount: gridMap.length,
               itemBuilder: (context, index) {
-                return DiseasesCard(
+                return SquareCard(
                   alphabet: "${gridMap[index]['alphabet']}",
                   title: "${gridMap[index]['title']}",
                   height: 124,
@@ -119,7 +119,7 @@ class HomeScreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: gridMap.length,
                 itemBuilder: (context, index) {
-                  return DiseasesCard(
+                  return SquareCard(
                       alphabet: "${gridMap[index]['alphabet']}",
                       title: "${gridMap[index]['title']}");
                 },

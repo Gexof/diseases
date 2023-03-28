@@ -4,7 +4,7 @@ import 'package:medicare_health_app/screens/seasons_screen/widgets/sasons_screen
 
 import 'package:medicare_health_app/widgets/mainheading.dart';
 
-import '../../widgets/custom_card.dart';
+import '../../widgets/long_card.dart';
 
 class SeasonsScreen extends StatelessWidget {
   const SeasonsScreen({super.key});
