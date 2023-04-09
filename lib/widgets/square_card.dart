@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
 class SquareCard extends StatelessWidget {
-  final String alphabet;
+  final String? alphabet;
+  final String? img;
+  bool isItImg;
   final String title;
   double height;
   double width;
 
   SquareCard({
     super.key,
-    required this.alphabet,
+    this.alphabet,
+    this.img = '',
+    this.isItImg = false,
     required this.title,
     this.height = 138,
     this.width = 184.0,
@@ -29,15 +33,23 @@ class SquareCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(13),
                   color: Colors.grey,
                 ),
-                child: Center(
-                  child: Text(
-                    alphabet,
-                    style: const TextStyle(
-                      fontSize: 64,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
+                child: isItImg
+                    ? ClipRRect(
+                        borderRadius: BorderRadius.circular(13),
+                        child: Image.network(
+                          img!,
+                          fit: BoxFit.cover,
+                        ),
+                      )
+                    : Center(
+                        child: Text(
+                          alphabet!,
+                          style: const TextStyle(
+                            fontSize: 64,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
               ),
               const SizedBox(height: 8),
               Text(

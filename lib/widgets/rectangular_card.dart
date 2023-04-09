@@ -4,7 +4,11 @@ import '../constants/colors.dart';
 import '../constants/sizes.dart';
 
 class RectangularCard extends StatelessWidget {
+  final String? img;
+  final String? seasonName;
   const RectangularCard({
+    required this.img,
+    required this.seasonName,
     super.key,
   });
 
@@ -47,7 +51,7 @@ class RectangularCard extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(13),
               child: Image.network(
-                'https://images.unsplash.com/photo-1679299398576-62c84f00660a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+                img!,
                 fit: BoxFit.cover,
               ),
             ),
@@ -57,7 +61,7 @@ class RectangularCard extends StatelessWidget {
               left: 48,
             ),
             child: Text(
-              'Spring'.toUpperCase(),
+              seasonName!.toUpperCase(),
               style: const TextStyle(
                 fontSize: mainHeadings,
                 color: primaryColor,

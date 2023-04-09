@@ -4,38 +4,13 @@ import 'package:medicare_health_app/widgets/grid_builder.dart';
 import 'package:medicare_health_app/widgets/square_card.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
 
+import '../constants/strings.dart';
 import '../widgets/custom_search_bar.dart';
 
 import '../widgets/mainheading.dart';
 
 class SearchScreen extends StatelessWidget {
   SearchScreen({super.key});
-  final List<Map<String, dynamic>> gridMap = [
-    {
-      'alphabet': 'A',
-      'title': 'A-Diseases',
-    },
-    {
-      'alphabet': 'B',
-      'title': 'B-Diseases',
-    },
-    {
-      'alphabet': 'C',
-      'title': 'C-Diseases',
-    },
-    {
-      'alphabet': 'D',
-      'title': 'D-Diseases',
-    },
-    {
-      'alphabet': 'E',
-      'title': 'E-Diseases',
-    },
-    {
-      'alphabet': 'F',
-      'title': 'F-Diseases',
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +24,8 @@ class SearchScreen extends StatelessWidget {
               const CustomSearchBar(),
               Subheading(title: 'Common Searches'),
               GridBuilder(
-                gridMap: gridMap,
-                itemCount: gridMap.length,
+                gridMap: imgs,
+                itemCount: imgs.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
@@ -60,8 +35,9 @@ class SearchScreen extends StatelessWidget {
                       }));
                     },
                     child: SquareCard(
-                      alphabet: "${gridMap[index]['alphabet']}",
-                      title: "${gridMap[index]['title']}",
+                      isItImg: true,
+                      img: "${imgs[index]['img']}",
+                      title: "${imgs[index]['title']}",
                       height: 124,
                       width: 167,
                     ),

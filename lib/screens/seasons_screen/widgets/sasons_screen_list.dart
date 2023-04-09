@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants/strings.dart';
 import '../../../widgets/rectangular_card.dart';
 import '../../season_screen.dart';
 
@@ -13,14 +14,17 @@ class SasonsScreenList extends StatelessWidget {
     return ListView.builder(
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
-      itemCount: 4,
+      itemCount: seasons.length,
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => SeasonScreen()));
           },
-          child: const RectangularCard(),
+          child: RectangularCard(
+            img: '${seasons[index]['img']}',
+            seasonName: '${seasons[index]['title']}',
+          ),
         );
       },
     );

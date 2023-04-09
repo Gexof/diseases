@@ -4,38 +4,12 @@ import 'package:medicare_health_app/constants/sizes.dart';
 import 'package:medicare_health_app/screens/alphabet_screen.dart';
 import 'package:medicare_health_app/widgets/square_card.dart';
 
+import '../constants/strings.dart';
 import '../widgets/grid_builder.dart';
 import '../widgets/subheading.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
-
-  final List<Map<String, dynamic>> gridMap = [
-    {
-      'alphabet': 'A',
-      'title': 'A-Diseases',
-    },
-    {
-      'alphabet': 'B',
-      'title': 'B-Diseases',
-    },
-    {
-      'alphabet': 'C',
-      'title': 'C-Diseases',
-    },
-    {
-      'alphabet': 'D',
-      'title': 'D-Diseases',
-    },
-    {
-      'alphabet': 'E',
-      'title': 'E-Diseases',
-    },
-    {
-      'alphabet': 'F',
-      'title': 'F-Diseases',
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -95,12 +69,12 @@ class HomeScreen extends StatelessWidget {
             ),
 
             GridBuilder(
-              gridMap: gridMap,
-              itemCount: gridMap.length,
+              gridMap: preAlphabet,
+              itemCount: preAlphabet.length,
               itemBuilder: (context, index) {
                 return SquareCard(
-                  alphabet: "${gridMap[index]['alphabet']}",
-                  title: "${gridMap[index]['title']}",
+                  alphabet: "${preAlphabet[index]['alphabet']}",
+                  title: "${preAlphabet[index]['title']}",
                   height: 124,
                   width: 167,
                 );
@@ -117,11 +91,12 @@ class HomeScreen extends StatelessWidget {
                   return const SizedBox(width: 20);
                 },
                 scrollDirection: Axis.horizontal,
-                itemCount: gridMap.length,
+                itemCount: imgs.length,
                 itemBuilder: (context, index) {
                   return SquareCard(
-                      alphabet: "${gridMap[index]['alphabet']}",
-                      title: "${gridMap[index]['title']}");
+                      isItImg: true,
+                      img: "${imgs[index]['img']}",
+                      title: "${imgs[index]['title']}");
                 },
               ),
             ),
