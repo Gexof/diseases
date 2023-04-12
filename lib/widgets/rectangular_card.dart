@@ -5,10 +5,10 @@ import '../constants/sizes.dart';
 
 class RectangularCard extends StatelessWidget {
   final String? img;
-  final String? seasonName;
+  final String? title;
   const RectangularCard({
     required this.img,
-    required this.seasonName,
+    required this.title,
     super.key,
   });
 
@@ -61,7 +61,7 @@ class RectangularCard extends StatelessWidget {
               left: 48,
             ),
             child: Text(
-              seasonName!.toUpperCase(),
+              title!.toUpperCase(),
               style: const TextStyle(
                 fontSize: mainHeadings,
                 color: primaryColor,

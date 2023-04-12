@@ -7,6 +7,7 @@ import 'package:medicare_health_app/widgets/subheading.dart';
 import '../constants/strings.dart';
 import '../widgets/grid_builder.dart';
 import '../widgets/square_card.dart';
+import 'about_disease_screen.dart';
 
 class SeasonScreen extends StatelessWidget {
   const SeasonScreen({super.key});
@@ -21,18 +22,25 @@ class SeasonScreen extends StatelessWidget {
             const Mainheading(headingName: 'Summer'),
             const CustomSearchBar(),
             Subheading(title: 'Summer Searches'),
-            GridBuilder(
-              gridMap: imgs,
-              itemCount: imgs.length,
-              itemBuilder: (context, index) {
-                return SquareCard(
-                  isItImg: true,
-                  img: "${imgs[index]['img']}",
-                  title: "${imgs[index]['title']}",
-                  height: 124,
-                  width: 167,
-                );
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const AboutDiseaseScreen();
+                }));
               },
+              child: GridBuilder(
+                gridMap: imgs,
+                itemCount: imgs.length,
+                itemBuilder: (context, index) {
+                  return SquareCard(
+                    isItImg: true,
+                    img: "${imgs[index]['img']}",
+                    title: "${imgs[index]['title']}",
+                    height: 124,
+                    width: 167,
+                  );
+                },
+              ),
             )
           ],
         ),

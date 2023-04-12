@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_health_app/screens/home_screen.dart';
+import 'package:medicare_health_app/screens/home_screen/home_screen.dart';
 import 'package:medicare_health_app/screens/search_screen.dart';
 
 import '../screens/seasons_screen/seasons_screen.dart';

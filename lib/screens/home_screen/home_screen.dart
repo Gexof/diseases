@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:medicare_health_app/constants/colors.dart';
 import 'package:medicare_health_app/constants/sizes.dart';
 import 'package:medicare_health_app/screens/alphabet_screen.dart';
+import 'package:medicare_health_app/screens/home_screen/widgets/alphabet_grid.dart';
+import 'package:medicare_health_app/screens/home_screen/widgets/recommended_list.dart';
 import 'package:medicare_health_app/widgets/square_card.dart';
 
-import '../constants/strings.dart';
-import '../widgets/grid_builder.dart';
-import '../widgets/subheading.dart';
+import '../../constants/strings.dart';
+import '../../widgets/grid_builder.dart';
+import '../../widgets/subheading.dart';
+import '../about_disease_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -70,38 +73,11 @@ class HomeScreen extends StatelessWidget {
               },
             ),
 
-            GridBuilder(
-              gridMap: preAlphabet,
-              itemCount: preAlphabet.length,
-              itemBuilder: (context, index) {
-                return SquareCard(
-                  alphabet: "${preAlphabet[index]['alphabet']}",
-                  title: "${preAlphabet[index]['title']}",
-                  height: 124,
-                  width: 167,
-                );
-              },
-            ),
+            const AlphabetGrid(),
 
             Subheading(title: 'Recommended'),
 
-            SizedBox(
-              height: MediaQuery.of(context).size.height / 2.5,
-              child: ListView.separated(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                separatorBuilder: (context, index) {
-                  return const SizedBox(width: 20);
-                },
-                scrollDirection: Axis.horizontal,
-                itemCount: imgs.length,
-                itemBuilder: (context, index) {
-                  return SquareCard(
-                      isItImg: true,
-                      img: "${imgs[index]['img']}",
-                      title: "${imgs[index]['title']}");
-                },
-              ),
-            ),
+            const RecommendedList(),
           ],
         ),
       ),

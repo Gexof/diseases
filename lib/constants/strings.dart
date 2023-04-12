@@ -136,6 +136,37 @@ final List<Map<String, dynamic>> allAlphabet = [
   },
 ];
 
+final List<Map<String, dynamic>> alphabet = [
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+  {
+    'alphabet': 'A',
+    'title': 'A-Diseases',
+  },
+];
+
 final List<Map<String, dynamic>> imgs = [
   {
     'img':

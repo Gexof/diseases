@@ -23,7 +23,7 @@ class SasonsScreenList extends StatelessWidget {
           },
           child: RectangularCard(
             img: '${seasons[index]['img']}',
-            seasonName: '${seasons[index]['title']}',
+            title: '${seasons[index]['title']}',
           ),
         );
       },
