@@ -9,7 +9,7 @@ import '../widgets/grid_builder.dart';
 import '../widgets/subheading.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -63,8 +63,10 @@ class HomeScreen extends StatelessWidget {
               title: 'Alphabetically',
               isSeaAll: true,
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => AlphabetScreen()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const AlphabetScreen()));
               },
             ),
 

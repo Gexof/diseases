@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../constants/colors.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
-  CustomCarouselSlider({
+  const CustomCarouselSlider({
     super.key,
   });
 

@@ -10,7 +10,7 @@ import '../widgets/custom_search_bar.dart';
 import '../widgets/mainheading.dart';
 
 class SearchScreen extends StatelessWidget {
-  SearchScreen({super.key});
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

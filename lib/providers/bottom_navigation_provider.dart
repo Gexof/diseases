@@ -7,8 +7,8 @@ import '../screens/seasons_screen/seasons_screen.dart';
 class BottomNavigationProvider extends ChangeNotifier {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
-    HomeScreen(),
-    SearchScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
     const SeasonsScreen(),
   ];
 

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:medicare_health_app/widgets/custom_app_bar.dart';
-import 'package:medicare_health_app/widgets/mainheading.dart';
 
 import '../constants/strings.dart';
 import '../widgets/square_card.dart';
 
 class AlphabetScreen extends StatelessWidget {
-  AlphabetScreen({super.key});
+  const AlphabetScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -19,7 +19,7 @@ class SasonsScreenList extends StatelessWidget {
         return GestureDetector(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SeasonScreen()));
+                MaterialPageRoute(builder: (context) => const SeasonScreen()));
           },
           child: RectangularCard(
             img: '${seasons[index]['img']}',

@@ -1,9 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medicare_health_app/constants/colors.dart';
-
-import 'package:medicare_health_app/widgets/mainheading.dart';
-import 'package:medicare_health_app/widgets/subheading.dart';
 
 import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_carousel_slider.dart';
@@ -25,10 +20,10 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 30),
+            children: const [
+              SizedBox(height: 30),
               CustomCarouselSlider(),
-              const DiseasesArticale(),
+              DiseasesArticale(),
             ],
           ),
         ],
