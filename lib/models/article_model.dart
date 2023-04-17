@@ -35,13 +35,12 @@ class Article {
     return data;
   }
 
-  fetchArticles() async {
+  static Future<List<Article>> fetchArticles() async {
     var data = await rootBundle.loadString("assets/data/articles.json");
     var decodedData = json.decode(data);
-    var articles = (decodedData["articles"] as List)
+    List<Article> articles = (decodedData["articles"] as List)
         .map((article) => Article.fromJson(article))
         .toList();
-    log(articles.toString());
-    return "success";
+    return articles;
   }
 }

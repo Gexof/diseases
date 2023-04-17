@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medicare_health_app/constants/colors.dart';
-import 'package:medicare_health_app/providers/bottom_navigation_provider.dart';
+import 'package:medicare_health_app/controllers/bottom_navigation_provider.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavBar extends StatelessWidget {
