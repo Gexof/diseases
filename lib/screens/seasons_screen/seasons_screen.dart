@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_health_app/screens/seasons_screen/widgets/sasons_screen_list.dart';
+import 'package:medicare_health_app/screens/seasons_screen/widgets/seasons_screen_list.dart';
 
 import 'package:medicare_health_app/widgets/mainheading.dart';
 
@@ -13,7 +13,7 @@ class SeasonsScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           Mainheading(headingName: 'Seasons'),
-          SasonsScreenList(),
+          SeasonsCardsList(),
         ],
       ),
     );

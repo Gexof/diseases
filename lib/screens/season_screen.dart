@@ -10,7 +10,12 @@ import '../widgets/square_card.dart';
 import 'about_disease_screen.dart';
 
 class SeasonScreen extends StatelessWidget {
-  const SeasonScreen({super.key});
+  const SeasonScreen({
+    required this.name,
+    super.key,
+  });
+
+  final String name;
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +24,9 @@ class SeasonScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Mainheading(headingName: 'Summer'),
+            Mainheading(headingName: name),
             const CustomSearchBar(),
-            Subheading(title: 'Summer Searches'),
+            Subheading(title: '$name Searches'),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {

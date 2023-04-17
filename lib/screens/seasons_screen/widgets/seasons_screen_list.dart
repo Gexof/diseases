@@ -4,8 +4,8 @@ import '../../../constants/strings.dart';
 import '../../../widgets/rectangular_card.dart';
 import '../../season_screen.dart';
 
-class SasonsScreenList extends StatelessWidget {
-  const SasonsScreenList({
+class SeasonsCardsList extends StatelessWidget {
+  const SeasonsCardsList({
     super.key,
   });
 
@@ -18,8 +18,12 @@ class SasonsScreenList extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const SeasonScreen()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => SeasonScreen(
+                          name: seasons[index]["title"],
+                        )));
           },
           child: RectangularCard(
             img: '${seasons[index]['img']}',
