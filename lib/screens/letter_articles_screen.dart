@@ -18,10 +18,10 @@ class LetterArticlesScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(title: '$letter-Diseases'),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Mainheading(headingName: 'Alphabet'),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: GridView.builder(

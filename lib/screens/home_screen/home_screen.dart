@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_health_app/screens/alphabet_screen.dart';
+import 'package:medicare_health_app/screens/alphabetic_categories_screen.dart';
 import 'package:medicare_health_app/screens/home_screen/widgets/alphabetic_grid.dart';
 import 'package:medicare_health_app/screens/home_screen/widgets/home_header.dart';
 import 'package:medicare_health_app/screens/home_screen/widgets/recommended_list.dart';

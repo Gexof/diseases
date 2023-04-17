@@ -17,12 +17,10 @@ class Subheading extends StatelessWidget {
   Widget build(BuildContext context) {
     return onTap != null
         ? Container(
-            margin: const EdgeInsets.only(
-              left: 20,
-              right: 24,
-              top: 45,
-            ),
+            height: 30,
+            margin: const EdgeInsets.symmetric(horizontal: 24),
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -35,12 +33,18 @@ class Subheading extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: onTap,
-                  child: const Text(
-                    'See All',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w700,
+                  child: Container(
+                    width: 100,
+                    height: 30,
+                    color: Colors.amber.withOpacity(.001),
+                    alignment: Alignment.centerRight,
+                    child: const Text(
+                      'See All',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
                 ),
