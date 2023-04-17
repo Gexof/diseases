@@ -18,7 +18,8 @@ class AlphabeticCategoriesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -27,11 +28,11 @@ class AlphabeticCategoriesScreen extends StatelessWidget {
                     crossAxisSpacing: 20.0,
                     mainAxisSpacing: 16,
                   ),
-                  itemCount: allAlphabet.length,
+                  itemCount: alphabeticLetters.length,
                   itemBuilder: (context, index) {
                     return SquareCard(
-                      alphabet: "${allAlphabet[index]['alphabet']}",
-                      title: "${allAlphabet[index]['title']}",
+                      alphabet: alphabeticLetters[index],
+                      title: "${alphabeticLetters[index]}-Diseases",
                       height: 124,
                       width: 167,
                     );
