@@ -1,0 +1,52 @@
+{
+    "articles": [
+        {
+            "title": "A Article 2",
+            "season": "Summer",
+            "sectionsTitles": [
+                "Section 1",
+                "Section 2"
+            ],
+            "sections": [
+                "Bla Bla Bla",
+                "Bla Bla Bla"
+            ],
+            "images": [
+                "ImageURL 1",
+                "ImageURL 2"
+            ]
+        },
+        {
+            "title": "A Article 2",
+            "season": "Winter",
+            "sectionsTitles": [
+                "Section 1",
+                "Section 2"
+            ],
+            "sections": [
+                "Bla Bla Bla",
+                "Bla Bla Bla"
+            ],
+            "images": [
+                "ImageURL 1",
+                "ImageURL 2"
+            ]
+        },
+        {
+            "title": "B Article 1",
+            "season": "Winter",
+            "sectionsTitles": [
+                "Section 1",
+                "Section 2"
+            ],
+            "sections": [
+                "Bla Bla Bla",
+                "Bla Bla Bla"
+            ],
+            "images": [
+                "ImageURL 1",
+                "ImageURL 2"
+            ]
+        }
+    ]
+}
