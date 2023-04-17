@@ -4,6 +4,7 @@ import 'package:medicare_health_app/screens/home_screen/widgets/alphabetic_grid.
 import 'package:medicare_health_app/screens/home_screen/widgets/home_header.dart';
 import 'package:medicare_health_app/screens/home_screen/widgets/recommended_list.dart';
 
+import '../../models/article_model.dart';
 import '../../widgets/subheading.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -11,6 +12,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Article().fetchArticles();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

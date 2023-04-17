@@ -1,3 +1,8 @@
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:flutter/services.dart';
+
 class Article {
   String? title;
   String? season;
@@ -28,5 +33,15 @@ class Article {
     data['sections'] = sections;
     data['images'] = images;
     return data;
+  }
+
+  fetchArticles() async {
+    var data = await rootBundle.loadString("assets/data/articles.json");
+    var decodedData = json.decode(data);
+    var articles = (decodedData["articles"] as List)
+        .map((article) => Article.fromJson(article))
+        .toList();
+    log(articles.toString());
+    return "success";
   }
 }
