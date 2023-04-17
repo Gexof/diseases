@@ -27,37 +27,6 @@ final List<String> alphabeticLetters = [
   'Z'
 ];
 
-final List<Map<String, dynamic>> alphabet = [
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-];
-
 final List<Map<String, dynamic>> imgs = [
   {
     'img':

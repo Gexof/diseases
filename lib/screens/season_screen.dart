@@ -38,7 +38,6 @@ class SeasonScreen extends StatelessWidget {
                 itemCount: imgs.length,
                 itemBuilder: (context, index) {
                   return SquareCard(
-                    isItImg: true,
                     img: "${imgs[index]['img']}",
                     title: "${imgs[index]['title']}",
                     height: 124,

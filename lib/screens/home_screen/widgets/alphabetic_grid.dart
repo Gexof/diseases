@@ -12,28 +12,19 @@ class AlphabeticGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const LetterArticlesScreen(
-            letter: 'A',
-          );
-        }));
+    return GridBuilder(
+      gridMap: [
+        {"letters": alphabeticLetters}
+      ],
+      itemCount: 6,
+      itemBuilder: (context, index) {
+        return SquareCard(
+          alphabet: alphabeticLetters[index],
+          title: "${alphabeticLetters[index]}-Diseases",
+          height: 124,
+          width: 167,
+        );
       },
-      child: GridBuilder(
-        gridMap: [
-          {"letters": alphabeticLetters}
-        ],
-        itemCount: 6,
-        itemBuilder: (context, index) {
-          return SquareCard(
-            alphabet: alphabeticLetters[index],
-            title: "${alphabeticLetters[index]}-Diseases",
-            height: 124,
-            width: 167,
-          );
-        },
-      ),
     );
   }
 }

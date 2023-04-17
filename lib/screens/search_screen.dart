@@ -35,7 +35,6 @@ class SearchScreen extends StatelessWidget {
                       }));
                     },
                     child: SquareCard(
-                      isItImg: true,
                       img: "${imgs[index]['img']}",
                       title: "${imgs[index]['title']}",
                       height: 124,

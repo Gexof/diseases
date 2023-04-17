@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:medicare_health_app/widgets/custom_app_bar.dart';
 
 import '../constants/strings.dart';
+import '../widgets/grid_builder.dart';
 import '../widgets/square_card.dart';
+import 'about_disease_screen.dart';
 
 class LetterArticlesScreen extends StatelessWidget {
   const LetterArticlesScreen({
@@ -22,26 +24,25 @@ class LetterArticlesScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: GridView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 20.0,
-                  mainAxisSpacing: 16,
-                ),
-                itemCount: alphabet.length,
-                itemBuilder: (context, index) {
-                  return SquareCard(
-                    alphabet: "${alphabet[index]['alphabet']}",
-                    title: "${alphabet[index]['title']}",
+            GridBuilder(
+              gridMap: imgs,
+              itemCount: imgs.length,
+              itemBuilder: (context, index) {
+                return GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const AboutDiseaseScreen();
+                    }));
+                  },
+                  child: SquareCard(
+                    img: "${imgs[index]['img']}",
+                    title: "${imgs[index]['title']}",
                     height: 124,
                     width: 167,
-                  );
-                },
-              ),
+                  ),
+                );
+              },
             ),
           ],
         ),

@@ -28,9 +28,7 @@ class RecommendedList extends StatelessWidget {
               }));
             },
             child: SquareCard(
-                isItImg: true,
-                img: "${imgs[index]['img']}",
-                title: "${imgs[index]['title']}"),
+                img: "${imgs[index]['img']}", title: "${imgs[index]['title']}"),
           );
         },
       ),
