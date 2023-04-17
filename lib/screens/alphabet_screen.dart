@@ -5,8 +5,8 @@ import 'package:medicare_health_app/widgets/custom_app_bar.dart';
 import '../constants/strings.dart';
 import '../widgets/square_card.dart';
 
-class AlphabetScreen extends StatelessWidget {
-  const AlphabetScreen({super.key});
+class AlphabeticCategoriesScreen extends StatelessWidget {
+  const AlphabeticCategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,6 @@ class AlphabetScreen extends StatelessWidget {
           child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Mainheading(headingName: 'Alphabet'),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: GridView.builder(

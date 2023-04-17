@@ -4,20 +4,18 @@ import '../constants/colors.dart';
 import '../constants/sizes.dart';
 
 class Subheading extends StatelessWidget {
-  Subheading({
+  const Subheading({
     super.key,
     required this.title,
-    this.isSeaAll = false,
     this.onTap,
   });
 
   final String title;
-  bool isSeaAll;
-  void Function()? onTap;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return isSeaAll
+    return onTap != null
         ? Container(
             margin: const EdgeInsets.only(
               left: 20,

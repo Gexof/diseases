@@ -22,7 +22,7 @@ class SearchScreen extends StatelessWidget {
             children: [
               const Mainheading(headingName: 'Search'),
               const CustomSearchBar(),
-              Subheading(title: 'Common Searches'),
+              const Subheading(title: 'Common Searches'),
               GridBuilder(
                 gridMap: imgs,
                 itemCount: imgs.length,

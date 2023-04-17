@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class SquareCard extends StatelessWidget {
   final String? alphabet;
   final String? img;
-  bool isItImg;
+  final bool isItImg;
   final String title;
-  double height;
-  double width;
+  final double height;
+  final double width;
 
-  SquareCard({
+  const SquareCard({
     super.key,
     this.alphabet,
     this.img = '',

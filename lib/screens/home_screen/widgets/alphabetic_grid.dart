@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_health_app/screens/alphabet_list_screen.dart';
+import 'package:medicare_health_app/screens/letter_articles_screen.dart';
 
 import '../../../constants/strings.dart';
 import '../../../widgets/grid_builder.dart';
 import '../../../widgets/square_card.dart';
 
-class AlphabetGrid extends StatelessWidget {
-  const AlphabetGrid({
+class AlphabeticGrid extends StatelessWidget {
+  const AlphabeticGrid({
     super.key,
   });
 
@@ -15,7 +15,9 @@ class AlphabetGrid extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const AlphabetListScreen();
+          return const LetterArticlesScreen(
+            letter: 'A',
+          );
         }));
       },
       child: GridBuilder(

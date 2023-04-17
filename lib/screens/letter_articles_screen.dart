@@ -5,13 +5,18 @@ import 'package:medicare_health_app/widgets/custom_app_bar.dart';
 import '../constants/strings.dart';
 import '../widgets/square_card.dart';
 
-class AlphabetListScreen extends StatelessWidget {
-  const AlphabetListScreen({super.key});
+class LetterArticlesScreen extends StatelessWidget {
+  const LetterArticlesScreen({
+    required this.letter,
+    super.key,
+  });
+
+  final String letter;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Alphabet Diseases'),
+      appBar: CustomAppBar(title: '$letter-Diseases'),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
