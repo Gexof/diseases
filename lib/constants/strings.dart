@@ -1,28 +1,30 @@
-final List<Map<String, dynamic>> preAlphabet = [
-  {
-    'alphabet': 'A',
-    'title': 'A-Diseases',
-  },
-  {
-    'alphabet': 'B',
-    'title': 'B-Diseases',
-  },
-  {
-    'alphabet': 'C',
-    'title': 'C-Diseases',
-  },
-  {
-    'alphabet': 'D',
-    'title': 'D-Diseases',
-  },
-  {
-    'alphabet': 'E',
-    'title': 'E-Diseases',
-  },
-  {
-    'alphabet': 'F',
-    'title': 'F-Diseases',
-  },
+final List<String> alphabeticLetters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z'
 ];
 
 final List<Map<String, dynamic>> allAlphabet = [

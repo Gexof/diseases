@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medicare_health_app/constants/strings.dart';
 import 'package:medicare_health_app/screens/letter_articles_screen.dart';
 
-import '../../../constants/strings.dart';
 import '../../../widgets/grid_builder.dart';
 import '../../../widgets/square_card.dart';
 
@@ -21,12 +21,14 @@ class AlphabeticGrid extends StatelessWidget {
         }));
       },
       child: GridBuilder(
-        gridMap: preAlphabet,
-        itemCount: preAlphabet.length,
+        gridMap: [
+          {"letters": alphabeticLetters}
+        ],
+        itemCount: 6,
         itemBuilder: (context, index) {
           return SquareCard(
-            alphabet: "${preAlphabet[index]['alphabet']}",
-            title: "${preAlphabet[index]['title']}",
+            alphabet: alphabeticLetters[index],
+            title: "${alphabeticLetters[index]}-Diseases",
             height: 124,
             width: 167,
           );
