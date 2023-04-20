@@ -22,11 +22,13 @@ class SquareCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return LetterArticlesScreen(
-            letter: alphabet!,
-          );
-        }));
+        alphabet != null
+            ? Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return LetterArticlesScreen(
+                  letter: alphabet!,
+                );
+              }))
+            : {};
       },
       child: Column(
         children: [
