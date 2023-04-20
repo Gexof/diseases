@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/controllers/articles_controller.dart';
 import 'package:medicare_health_app/screens/alphabetic_categories_screen.dart';

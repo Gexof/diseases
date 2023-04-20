@@ -15,7 +15,7 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'About Disease'),
+      appBar: const CustomAppBar(title: 'About Disease'),
       body: ListView(
         children: [
           Column(

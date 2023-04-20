@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medicare_health_app/constants/strings.dart';
-import 'package:medicare_health_app/screens/letter_articles_screen.dart';
 
 import '../../../widgets/grid_builder.dart';
 import '../../../widgets/square_card.dart';

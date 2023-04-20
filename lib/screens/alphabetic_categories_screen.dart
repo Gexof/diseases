@@ -11,7 +11,7 @@ class AlphabeticCategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Alphabet'),
+      appBar: const CustomAppBar(title: 'Alphabet'),
       body: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Column(
