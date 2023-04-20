@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/services.dart';
 
@@ -8,6 +9,7 @@ class Article {
   late List<String> sectionsTitles;
   late List<String> sections;
   late List<String> images;
+  late String allStrings;
 
   Article({
     required this.title,
@@ -23,6 +25,18 @@ class Article {
     sectionsTitles = json['sectionsTitles'].cast<String>();
     sections = json['sections'].cast<String>();
     images = json['images'].cast<String>();
+    // TODO: Refactor
+    List<String> stringsList = [
+      title,
+      season,
+    ];
+    for (String sectionTitle in sectionsTitles) {
+      stringsList.add(sectionTitle);
+    }
+    for (String sectionContent in sections) {
+      stringsList.add(sectionContent);
+    }
+    allStrings = stringsList.join(" ");
   }
 
   Map<String, dynamic> toJson() {

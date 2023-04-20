@@ -12,9 +12,18 @@ class ArticlesController with ChangeNotifier {
 
   List<Article> searchArticles({required String searchString}) {
     List<Article> filteredArticles = [];
-    // "Cow Cold Snoring" => ["Cow","Cold","Snoring"]
     List<String> keywords = searchString.split(" ");
-
+    for (var article in articles) {
+      bool allMatched = true;
+      for (String keyword in keywords) {
+        if (!article.allStrings.contains(keyword)) {
+          allMatched = false;
+        }
+      }
+      if (allMatched) {
+        filteredArticles.add(article);
+      }
+    }
     return filteredArticles;
   }
 
