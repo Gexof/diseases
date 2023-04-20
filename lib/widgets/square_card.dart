@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../screens/about_disease_screen.dart';
 import '../screens/letter_articles_screen.dart';
 
 class SquareCard extends StatelessWidget {
@@ -23,12 +24,8 @@ class SquareCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         alphabet != null
-            ? Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return LetterArticlesScreen(
-                  letter: alphabet!,
-                );
-              }))
-            : {};
+            ? _navigateToLetterScreen(context)
+            : _navigateToArticleScreen(context);
       },
       child: Column(
         children: [
@@ -72,6 +69,30 @@ class SquareCard extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void _navigateToArticleScreen(context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return const AboutDiseaseScreen();
+        },
+      ),
+    );
+  }
+
+  void _navigateToLetterScreen(context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return LetterArticlesScreen(
+            letter: alphabet!,
+          );
+        },
       ),
     );
   }
