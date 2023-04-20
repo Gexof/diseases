@@ -3,18 +3,19 @@ import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class Article {
-  String? title;
-  String? season;
-  List<String>? sectionsTitles;
-  List<String>? sections;
-  List<String>? images;
+  late String title;
+  late String season;
+  late List<String> sectionsTitles;
+  late List<String> sections;
+  late List<String> images;
 
-  Article(
-      {this.title,
-      this.season,
-      this.sectionsTitles,
-      this.sections,
-      this.images});
+  Article({
+    required this.title,
+    required this.season,
+    required this.sectionsTitles,
+    required this.sections,
+    required this.images,
+  });
 
   Article.fromJson(Map<String, dynamic> json) {
     title = json['title'];
