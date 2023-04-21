@@ -4,7 +4,7 @@ import 'package:medicare_health_app/screens/search_screen.dart';
 
 import '../screens/seasons_screen/seasons_screen.dart';
 
-class BottomNavigationProvider extends ChangeNotifier {
+class BottomNavigationController extends ChangeNotifier {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
     const HomeScreen(),
