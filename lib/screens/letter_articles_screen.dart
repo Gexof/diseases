@@ -22,8 +22,6 @@ class LetterArticlesScreen extends StatefulWidget {
 }
 
 class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
-  List<Article> filteredArticles = [];
-
   @override
   void initState() {
     Provider.of<ArticlesController>(context, listen: false)
@@ -33,6 +31,8 @@ class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ArticlesController articlesController =
+        Provider.of<ArticlesController>(context);
     return Scaffold(
       appBar: CustomAppBar(title: '${widget.letter}-Diseases'),
       body: SingleChildScrollView(
@@ -42,11 +42,11 @@ class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
           children: [
             GridBuilder(
               gridMap: imgs,
-              itemCount: filteredArticles.length,
+              itemCount: articlesController.filteredArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(
                   img: "${imgs[index]['img']}",
-                  title: filteredArticles[index].title,
+                  title: articlesController.filteredArticles[index].title,
                   height: 124,
                   width: 167,
                 );

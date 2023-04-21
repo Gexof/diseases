@@ -25,8 +25,6 @@ class SeasonScreen extends StatefulWidget {
 }
 
 class _SeasonScreenState extends State<SeasonScreen> {
-  List<Article> filteredArticles = [];
-
   @override
   void initState() {
     Provider.of<ArticlesController>(context, listen: false)
@@ -36,21 +34,25 @@ class _SeasonScreenState extends State<SeasonScreen> {
 
   @override
   Widget build(BuildContext context) {
+    ArticlesController articlesController =
+        Provider.of<ArticlesController>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Mainheading(headingName: widget.name),
-            CustomSearchBar(articles: filteredArticles),
+            CustomSearchBar(
+                articles:
+                    Provider.of<ArticlesController>(context).filteredArticles),
             Subheading(title: '${widget.name} Searches'),
             GridBuilder(
               gridMap: imgs,
-              itemCount: filteredArticles.length,
+              itemCount: articlesController.filteredArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(
                   img: "${imgs[index]['img']}",
-                  title: filteredArticles[index].title,
+                  title: articlesController.filteredArticles[index].title,
                   height: 124,
                   width: 167,
                 );
