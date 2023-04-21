@@ -5,6 +5,7 @@ import '../models/article_model.dart';
 class ArticlesController with ChangeNotifier {
   List<Article> articles = [];
   List<Article> filteredArticles = [];
+  List<Article> matchedArticles = [];
 
   void setArticles(newArticles) {
     articles = newArticles;
@@ -12,7 +13,7 @@ class ArticlesController with ChangeNotifier {
   }
 
   void searchArticles({required String searchString}) {
-    filteredArticles.clear();
+    matchedArticles.clear();
     List<String> keywords = searchString.split(" ");
     for (var article in articles) {
       bool allMatched = true;
@@ -22,7 +23,7 @@ class ArticlesController with ChangeNotifier {
         }
       }
       if (allMatched) {
-        filteredArticles.add(article);
+        matchedArticles.add(article);
       }
     }
   }

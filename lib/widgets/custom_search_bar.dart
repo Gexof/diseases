@@ -13,13 +13,10 @@ class CustomSearchBar extends StatefulWidget {
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
   final _searchFieldController = TextEditingController();
+  bool isEmptyString = true;
 
   @override
   Widget build(BuildContext context) {
-    _searchFieldController.addListener(() {
-      setState(() {});
-    });
-
     return Container(
       margin: const EdgeInsets.only(
         top: 32,
@@ -43,10 +40,13 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               BlendMode.srcIn,
             ),
           ),
-          suffixIcon: _searchFieldController.text.isNotEmpty
+          suffixIcon: !isEmptyString
               ? IconButton(
                   onPressed: () {
-                    _searchFieldController.clear();
+                    setState(() {
+                      _searchFieldController.clear();
+                      isEmptyString = true;
+                    });
                     setState(() {});
                   },
                   icon: SvgPicture.asset(
@@ -64,6 +64,17 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             color: grayColor,
           ),
         ),
+        onChanged: (keywords) {
+          if (keywords.isNotEmpty) {
+            setState(() {
+              isEmptyString = false;
+            });
+          } else {
+            setState(() {
+              isEmptyString = true;
+            });
+          }
+        },
       ),
     );
   }
