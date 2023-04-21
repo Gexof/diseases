@@ -42,9 +42,7 @@ class _SeasonScreenState extends State<SeasonScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Mainheading(headingName: widget.name),
-            CustomSearchBar(
-                articles:
-                    Provider.of<ArticlesController>(context).filteredArticles),
+            const CustomSearchBar(),
             Subheading(title: '${widget.name} Searches'),
             GridBuilder(
               gridMap: imgs,

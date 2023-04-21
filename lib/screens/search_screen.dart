@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:medicare_health_app/controllers/articles_controller.dart';
 import 'package:medicare_health_app/screens/about_disease_screen.dart';
 import 'package:medicare_health_app/widgets/grid_builder.dart';
 import 'package:medicare_health_app/widgets/square_card.dart';
 import 'package:medicare_health_app/widgets/subheading.dart';
-import 'package:provider/provider.dart';
 
 import '../constants/strings.dart';
 import '../widgets/custom_search_bar.dart';
@@ -16,8 +14,6 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ArticlesController articlesController =
-        Provider.of<ArticlesController>(context);
     return Scaffold(
       body: ListView(
         children: [
@@ -25,9 +21,7 @@ class SearchScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Mainheading(headingName: 'Search'),
-              CustomSearchBar(
-                articles: articlesController.articles,
-              ),
+              const CustomSearchBar(),
               const Subheading(title: 'Common Searches'),
               GridBuilder(
                 gridMap: imgs,
