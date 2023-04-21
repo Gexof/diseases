@@ -45,19 +45,11 @@ class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
               gridMap: imgs,
               itemCount: filteredArticles.length,
               itemBuilder: (context, index) {
-                return GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const AboutDiseaseScreen();
-                    }));
-                  },
-                  child: SquareCard(
-                    img: "${imgs[index]['img']}",
-                    title: filteredArticles[index].title,
-                    height: 124,
-                    width: 167,
-                  ),
+                return SquareCard(
+                  img: "${imgs[index]['img']}",
+                  title: filteredArticles[index].title,
+                  height: 124,
+                  width: 167,
                 );
               },
             ),

@@ -16,7 +16,7 @@ class ArticlesController with ChangeNotifier {
     for (var article in articles) {
       bool allMatched = true;
       for (String keyword in keywords) {
-        if (!article.allStrings.contains(keyword)) {
+        if (!article.allStrings.toLowerCase().contains(keyword.toLowerCase())) {
           allMatched = false;
         }
       }
@@ -30,7 +30,7 @@ class ArticlesController with ChangeNotifier {
   List<Article> getAlphabeticCategory({required String letter}) {
     List<Article> filteredArticles = [];
     for (var article in articles) {
-      if (article.title[0] == letter) {
+      if (article.title[0].toLowerCase() == letter.toLowerCase()) {
         filteredArticles.add(article);
       }
     }
@@ -40,7 +40,7 @@ class ArticlesController with ChangeNotifier {
   List<Article> getSeasonCategory({required String season}) {
     List<Article> filteredArticles = [];
     for (var article in articles) {
-      if (article.season == season) {
+      if (article.season.toLowerCase() == season.toLowerCase()) {
         filteredArticles.add(article);
       }
     }
