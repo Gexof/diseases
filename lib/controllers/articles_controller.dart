@@ -12,6 +12,7 @@ class ArticlesController with ChangeNotifier {
   }
 
   void searchArticles({required String searchString}) {
+    filteredArticles.clear();
     List<String> keywords = searchString.split(" ");
     for (var article in articles) {
       bool allMatched = true;
@@ -27,6 +28,7 @@ class ArticlesController with ChangeNotifier {
   }
 
   void getAlphabeticCategory({required String letter}) {
+    filteredArticles.clear();
     for (var article in articles) {
       if (article.title[0].toLowerCase() == letter.toLowerCase()) {
         filteredArticles.add(article);
@@ -35,6 +37,7 @@ class ArticlesController with ChangeNotifier {
   }
 
   void getSeasonCategory({required String season}) {
+    filteredArticles.clear();
     for (var article in articles) {
       if (article.season.toLowerCase() == season.toLowerCase()) {
         filteredArticles.add(article);
