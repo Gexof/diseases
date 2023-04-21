@@ -1,6 +1,11 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medicare_health_app/constants/colors.dart';
+import 'package:provider/provider.dart';
+
+import '../controllers/articles_controller.dart';
 
 class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({
@@ -17,6 +22,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
 
   @override
   Widget build(BuildContext context) {
+    ArticlesController articlesController =
+        Provider.of<ArticlesController>(context);
     return Container(
       margin: const EdgeInsets.only(
         top: 32,
@@ -64,18 +71,23 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             color: grayColor,
           ),
         ),
-        onChanged: (keywords) {
-          if (keywords.isNotEmpty) {
-            setState(() {
-              isEmptyString = false;
-            });
-          } else {
-            setState(() {
-              isEmptyString = true;
-            });
-          }
+        onChanged: (searchString) {
+          switchClearButton(searchString: searchString);
+          articlesController.searchArticles(searchString: searchString);
         },
       ),
     );
+  }
+
+  void switchClearButton({required String searchString}) {
+    if (searchString.isNotEmpty) {
+      setState(() {
+        isEmptyString = false;
+      });
+    } else {
+      setState(() {
+        isEmptyString = true;
+      });
+    }
   }
 }
