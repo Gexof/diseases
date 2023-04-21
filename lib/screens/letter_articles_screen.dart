@@ -8,7 +8,6 @@ import '../constants/strings.dart';
 import '../models/article_model.dart';
 import '../widgets/grid_builder.dart';
 import '../widgets/square_card.dart';
-import 'about_disease_screen.dart';
 
 class LetterArticlesScreen extends StatefulWidget {
   const LetterArticlesScreen({
@@ -27,7 +26,7 @@ class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
 
   @override
   void initState() {
-    filteredArticles = Provider.of<ArticlesController>(context, listen: false)
+    Provider.of<ArticlesController>(context, listen: false)
         .getAlphabeticCategory(letter: widget.letter);
     super.initState();
   }

@@ -29,7 +29,7 @@ class _SeasonScreenState extends State<SeasonScreen> {
 
   @override
   void initState() {
-    filteredArticles = Provider.of<ArticlesController>(context, listen: false)
+    Provider.of<ArticlesController>(context, listen: false)
         .getSeasonCategory(season: widget.name);
     super.initState();
   }

@@ -4,14 +4,14 @@ import '../models/article_model.dart';
 
 class ArticlesController with ChangeNotifier {
   List<Article> articles = [];
+  List<Article> filteredArticles = [];
 
   void setArticles(newArticles) {
     articles = newArticles;
     notifyListeners();
   }
 
-  List<Article> searchArticles({required String searchString}) {
-    List<Article> filteredArticles = [];
+  void searchArticles({required String searchString}) {
     List<String> keywords = searchString.split(" ");
     for (var article in articles) {
       bool allMatched = true;
@@ -24,26 +24,21 @@ class ArticlesController with ChangeNotifier {
         filteredArticles.add(article);
       }
     }
-    return filteredArticles;
   }
 
-  List<Article> getAlphabeticCategory({required String letter}) {
-    List<Article> filteredArticles = [];
+  void getAlphabeticCategory({required String letter}) {
     for (var article in articles) {
       if (article.title[0].toLowerCase() == letter.toLowerCase()) {
         filteredArticles.add(article);
       }
     }
-    return filteredArticles;
   }
 
-  List<Article> getSeasonCategory({required String season}) {
-    List<Article> filteredArticles = [];
+  void getSeasonCategory({required String season}) {
     for (var article in articles) {
       if (article.season.toLowerCase() == season.toLowerCase()) {
         filteredArticles.add(article);
       }
     }
-    return filteredArticles;
   }
 }
