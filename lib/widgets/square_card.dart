@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../models/article_model.dart';
 import '../screens/about_disease_screen.dart';
 import '../screens/letter_articles_screen.dart';
 
@@ -9,12 +10,14 @@ class SquareCard extends StatelessWidget {
   final String title;
   final double height;
   final double width;
+  final Article? article;
 
   const SquareCard({
     super.key,
     this.alphabet,
     this.img,
     required this.title,
+    this.article,
     this.height = 138,
     this.width = 184.0,
   });
@@ -25,7 +28,7 @@ class SquareCard extends StatelessWidget {
       onTap: () {
         alphabet != null
             ? _navigateToLetterScreen(context)
-            : _navigateToArticleScreen(context);
+            : _navigateToArticleScreen(context, article);
       },
       child: Column(
         children: [
@@ -73,12 +76,14 @@ class SquareCard extends StatelessWidget {
     );
   }
 
-  void _navigateToArticleScreen(context) {
+  void _navigateToArticleScreen(context, article) {
     Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) {
-          return const AboutDiseaseScreen();
+          return AboutDiseaseScreen(
+            article: article,
+          );
         },
       ),
     );

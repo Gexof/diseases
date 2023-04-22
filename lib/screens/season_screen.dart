@@ -48,6 +48,7 @@ class _SeasonScreenState extends State<SeasonScreen> {
                 return SquareCard(
                   img: "${imgs[index]['img']}",
                   title: articlesController.matchedArticles[index].title,
+                  article: articlesController.matchedArticles[index],
                   height: 124,
                   width: 167,
                 );

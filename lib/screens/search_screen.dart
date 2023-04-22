@@ -34,6 +34,7 @@ class SearchScreen extends StatelessWidget {
                   return SquareCard(
                     img: "${imgs[index]['img']}",
                     title: articlesController.searchedArticles[index].title,
+                    article: articlesController.searchedArticles[index],
                     height: 124,
                     width: 167,
                   );

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
+import '../models/article_model.dart';
 import '../widgets/custom_app_bar.dart';
 import '../widgets/custom_carousel_slider.dart';
 import '../widgets/diseases_articale.dart';
 
 class AboutDiseaseScreen extends StatefulWidget {
-  const AboutDiseaseScreen({super.key});
+  const AboutDiseaseScreen({
+    required this.article,
+    super.key,
+  });
+
+  final Article article;
 
   @override
   State<AboutDiseaseScreen> createState() => _AboutDiseaseScreenState();
