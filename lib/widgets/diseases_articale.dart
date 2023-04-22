@@ -2,19 +2,25 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import '../constants/sizes.dart';
+import '../models/article_model.dart';
 import 'diseases_name_heading.dart';
 
 class DiseasesArticale extends StatelessWidget {
   const DiseasesArticale({
     super.key,
+    required this.article,
   });
+
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const DiseasesNameHeading(),
+        DiseasesNameHeading(
+          article: article,
+        ),
         const Padding(
           padding: EdgeInsets.only(
             left: 20,

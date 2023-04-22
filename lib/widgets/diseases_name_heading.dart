@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
 import '../constants/sizes.dart';
+import '../models/article_model.dart';
 
 class DiseasesNameHeading extends StatelessWidget {
   const DiseasesNameHeading({
+    required this.article,
     super.key,
   });
+
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +19,11 @@ class DiseasesNameHeading extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
+          Padding(
+            padding: const EdgeInsets.only(left: 20),
             child: Text(
-              'Diseases Name',
-              style: TextStyle(
+              article.title,
+              style: const TextStyle(
                 fontSize: contentHeadings,
                 fontWeight: FontWeight.w500,
               ),

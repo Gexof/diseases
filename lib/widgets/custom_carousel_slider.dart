@@ -2,12 +2,15 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/colors.dart';
+import '../models/article_model.dart';
 
 class CustomCarouselSlider extends StatefulWidget {
   const CustomCarouselSlider({
+    required this.article,
     super.key,
   });
 
+  final Article article;
   @override
   State<CustomCarouselSlider> createState() => _CustomCarouselSliderState();
 }

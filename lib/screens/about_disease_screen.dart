@@ -21,15 +21,19 @@ class _AboutDiseaseScreenState extends State<AboutDiseaseScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'About Disease'),
+      appBar: CustomAppBar(title: widget.article.title),
       body: ListView(
         children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              SizedBox(height: 30),
-              CustomCarouselSlider(),
-              DiseasesArticale(),
+            children: [
+              const SizedBox(height: 30),
+              CustomCarouselSlider(
+                article: widget.article,
+              ),
+              DiseasesArticale(
+                article: widget.article,
+              ),
             ],
           ),
         ],
