@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 import '../models/article_model.dart';
@@ -5,7 +7,12 @@ import '../models/article_model.dart';
 class ArticlesController with ChangeNotifier {
   List<Article> articles = [];
   List<Article> filteredArticles = [];
-  List<Article> matchedArticles = [];
+  final List<Article> _matchedArticles = [];
+
+  get matchedArticles {
+    log(_matchedArticles.toString());
+    return _matchedArticles.isEmpty ? filteredArticles : _matchedArticles;
+  }
 
   void setArticles(newArticles) {
     articles = newArticles;
@@ -13,9 +20,9 @@ class ArticlesController with ChangeNotifier {
   }
 
   void searchArticles({required String searchString}) {
-    matchedArticles.clear();
+    _matchedArticles.clear();
     List<String> keywords = searchString.split(" ");
-    for (var article in articles) {
+    for (var article in filteredArticles) {
       bool allMatched = true;
       for (String keyword in keywords) {
         if (!article.allStrings.toLowerCase().contains(keyword.toLowerCase())) {
@@ -23,9 +30,10 @@ class ArticlesController with ChangeNotifier {
         }
       }
       if (allMatched) {
-        matchedArticles.add(article);
+        _matchedArticles.add(article);
       }
     }
+    notifyListeners();
   }
 
   void getAlphabeticCategory({required String letter}) {

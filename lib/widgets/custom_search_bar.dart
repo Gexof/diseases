@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medicare_health_app/constants/colors.dart';
@@ -19,6 +17,15 @@ class CustomSearchBar extends StatefulWidget {
 class _CustomSearchBarState extends State<CustomSearchBar> {
   final _searchFieldController = TextEditingController();
   bool isEmptyString = true;
+
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Provider.of<ArticlesController>(context, listen: false)
+          .searchArticles(searchString: "");
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

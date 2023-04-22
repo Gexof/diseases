@@ -46,11 +46,11 @@ class _SeasonScreenState extends State<SeasonScreen> {
             Subheading(title: '${widget.name} Searches'),
             GridBuilder(
               gridMap: imgs,
-              itemCount: articlesController.filteredArticles.length,
+              itemCount: articlesController.matchedArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(
                   img: "${imgs[index]['img']}",
-                  title: articlesController.filteredArticles[index].title,
+                  title: articlesController.matchedArticles[index].title,
                   height: 124,
                   width: 167,
                 );

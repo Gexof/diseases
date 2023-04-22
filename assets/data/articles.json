@@ -1,7 +1,7 @@
 {
     "articles": [
         {
-            "title": "A Article 2",
+            "title": "AAA Article 1",
             "season": "Summer",
             "sectionsTitles": [
                 "Section 1",
@@ -17,7 +17,7 @@
             ]
         },
         {
-            "title": "A Article 2",
+            "title": "AAA Article 2",
             "season": "Winter",
             "sectionsTitles": [
                 "Section 1",
@@ -33,7 +33,7 @@
             ]
         },
         {
-            "title": "B Article 1",
+            "title": "BBB Article 1",
             "season": "Winter",
             "sectionsTitles": [
                 "Section 1",
