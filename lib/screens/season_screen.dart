@@ -46,8 +46,6 @@ class _SeasonScreenState extends State<SeasonScreen> {
               itemCount: articlesController.matchedArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(
-                  img: "${imgs[index]['img']}",
-                  title: articlesController.matchedArticles[index].title,
                   article: articlesController.matchedArticles[index],
                   height: 124,
                   width: 167,

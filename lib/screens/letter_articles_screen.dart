@@ -44,8 +44,6 @@ class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
               itemCount: articlesController.filteredArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(
-                  img: "${imgs[index]['img']}",
-                  title: articlesController.filteredArticles[index].title,
                   article: articlesController.filteredArticles[index],
                   height: 124,
                   width: 167,

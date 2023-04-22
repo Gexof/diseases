@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../constants/strings.dart';
 import '../models/article_model.dart';
 import '../screens/about_disease_screen.dart';
 import '../screens/letter_articles_screen.dart';
 
 class SquareCard extends StatelessWidget {
   final String? alphabet;
-  final String? img;
-  final String title;
+  final String? title;
   final double height;
   final double width;
   final Article? article;
@@ -15,8 +15,7 @@ class SquareCard extends StatelessWidget {
   const SquareCard({
     super.key,
     this.alphabet,
-    this.img,
-    required this.title,
+    this.title,
     this.article,
     this.height = 138,
     this.width = 184.0,
@@ -43,7 +42,7 @@ class SquareCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(13),
                       color: Colors.grey,
                     ),
-                    child: img == null
+                    child: article == null
                         ? Center(
                             child: Text(
                               alphabet!,
@@ -56,13 +55,14 @@ class SquareCard extends StatelessWidget {
                         : ClipRRect(
                             borderRadius: BorderRadius.circular(13),
                             child: Image.network(
-                              img!,
+                              // REFACTOR
+                              imgs[0]['img'],
                               fit: BoxFit.cover,
                             ),
                           )),
                 const SizedBox(height: 8),
                 Text(
-                  title,
+                  title ?? article?.title ?? "NULL",
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w700,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:medicare_health_app/controllers/articles_controller.dart';
 import 'package:provider/provider.dart';
 
-import '../../../constants/strings.dart';
 import '../../../widgets/square_card.dart';
 
 // TODO: REFACTOR WHEN YOU HAVE DATA
@@ -22,15 +21,11 @@ class RecommendedList extends StatelessWidget {
         },
         scrollDirection: Axis.horizontal,
         physics: const BouncingScrollPhysics(),
-        itemCount: Provider.of<ArticlesController>(context, listen: false)
-            .articles
-            .length,
+        itemCount: Provider.of<ArticlesController>(context).articles.length,
         itemBuilder: (context, index) {
           return SquareCard(
-              img: "${imgs[index]['img']}",
-              title: "${imgs[index]['title']}",
-              article: Provider.of<ArticlesController>(context, listen: false)
-                  .articles[index]);
+            article: Provider.of<ArticlesController>(context).articles[index],
+          );
         },
       ),
     );
