@@ -10,8 +10,11 @@ class ArticlesController with ChangeNotifier {
   final List<Article> _matchedArticles = [];
 
   get matchedArticles {
-    log(_matchedArticles.toString());
     return _matchedArticles.isEmpty ? filteredArticles : _matchedArticles;
+  }
+
+  get searchedArticles {
+    return _matchedArticles.isEmpty ? articles : _matchedArticles;
   }
 
   void setArticles(newArticles) {
@@ -19,10 +22,12 @@ class ArticlesController with ChangeNotifier {
     notifyListeners();
   }
 
-  void searchArticles({required String searchString}) {
+  void searchArticles({bool searchAll = false, required String searchString}) {
     _matchedArticles.clear();
     List<String> keywords = searchString.split(" ");
-    for (var article in filteredArticles) {
+    log(searchAll.toString());
+    for (var article in (searchAll ? articles : filteredArticles)) {
+      log(article.toString());
       bool allMatched = true;
       for (String keyword in keywords) {
         if (!article.allStrings.toLowerCase().contains(keyword.toLowerCase())) {

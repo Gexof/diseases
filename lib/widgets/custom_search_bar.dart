@@ -6,7 +6,9 @@ import 'package:provider/provider.dart';
 import '../controllers/articles_controller.dart';
 
 class CustomSearchBar extends StatefulWidget {
+  final bool searchAll;
   const CustomSearchBar({
+    this.searchAll = false,
     super.key,
   });
 
@@ -22,7 +24,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       Provider.of<ArticlesController>(context, listen: false)
-          .searchArticles(searchString: "");
+          .searchArticles(searchString: "", searchAll: widget.searchAll);
     });
     super.initState();
   }
@@ -80,7 +82,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         ),
         onChanged: (searchString) {
           switchClearButton(searchString: searchString);
-          articlesController.searchArticles(searchString: searchString);
+          articlesController.searchArticles(
+              searchString: searchString, searchAll: widget.searchAll);
         },
       ),
     );

@@ -7,10 +7,8 @@ import 'package:provider/provider.dart';
 
 import '../constants/strings.dart';
 import '../controllers/articles_controller.dart';
-import '../models/article_model.dart';
 import '../widgets/grid_builder.dart';
 import '../widgets/square_card.dart';
-import 'about_disease_screen.dart';
 
 class SeasonScreen extends StatefulWidget {
   const SeasonScreen({
