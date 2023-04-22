@@ -12,9 +12,6 @@ class AlphabeticGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridBuilder(
-      gridMap: [
-        {"letters": alphabeticLetters}
-      ],
       itemCount: 6,
       itemBuilder: (context, index) {
         return SquareCard(

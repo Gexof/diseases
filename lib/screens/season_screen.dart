@@ -45,7 +45,6 @@ class _SeasonScreenState extends State<SeasonScreen> {
             const CustomSearchBar(),
             Subheading(title: '${widget.name} Searches'),
             GridBuilder(
-              gridMap: imgs,
               itemCount: articlesController.matchedArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(

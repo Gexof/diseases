@@ -41,7 +41,6 @@ class _LetterArticlesScreenState extends State<LetterArticlesScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GridBuilder(
-              gridMap: imgs,
               itemCount: articlesController.filteredArticles.length,
               itemBuilder: (context, index) {
                 return SquareCard(

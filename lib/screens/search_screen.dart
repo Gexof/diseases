@@ -24,7 +24,6 @@ class SearchScreen extends StatelessWidget {
               const CustomSearchBar(),
               const Subheading(title: 'Common Searches'),
               GridBuilder(
-                gridMap: imgs,
                 itemCount: imgs.length,
                 itemBuilder: (context, index) {
                   return GestureDetector(

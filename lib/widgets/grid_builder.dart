@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 class GridBuilder extends StatelessWidget {
   const GridBuilder({
     super.key,
-    required this.gridMap,
     required this.itemCount,
     required this.itemBuilder,
   });
 
-  final List<Map<String, dynamic>> gridMap;
   final int itemCount;
   final Widget? Function(BuildContext, int) itemBuilder;
 
